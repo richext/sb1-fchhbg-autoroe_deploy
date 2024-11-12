@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Microgramma';
+  src: url('https://db.onlinewebfonts.com/t/c041d3f6e157314e4b1ca959ba12f6ba.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-black text-white overscroll-none;
+    font-family: 'Microgramma', 'Chakra Petch', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  input, textarea, select {
+    @apply appearance-none;
+    -webkit-appearance: none;
+  }
+
+  button, a {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+@layer components {
+  .card-neumorph {
+    @apply relative overflow-hidden;
+    background: linear-gradient(145deg, rgba(26,26,26,0.5), rgba(13,13,13,0.5));
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.4),
+                -8px -8px 16px rgba(255,255,255,0.03);
+  }
+
+  .btn-neumorph {
+    @apply relative overflow-hidden rounded-lg transition-all duration-300;
+    background: linear-gradient(145deg, rgba(26,26,26,0.5), rgba(13,13,13,0.5));
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4),
+                -4px -4px 8px rgba(255,255,255,0.03);
+  }
+
+  .btn-neumorph:hover {
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.5),
+                -6px -6px 12px rgba(255,255,255,0.04);
+  }
+
+  .btn-neumorph:active {
+    background: linear-gradient(145deg, rgba(13,13,13,0.5), rgba(26,26,26,0.5));
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.4),
+                inset -4px -4px 8px rgba(255,255,255,0.03);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px #FF7F00;
+    text-shadow: 0 0 20px rgba(255,127,0,0.5);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at center,
+      rgba(255,127,0,0.15) 0%,
+      rgba(0,0,0,0) 70%
+    );
+  }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.letter-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  color: #FF7F00;
+  text-shadow: 
+    0 0 10px rgba(255, 127, 0, 0.5),
+    0 0 20px rgba(255, 127, 0, 0.3),
+    0 0 30px rgba(255, 127, 0, 0.2);
+}
+
+.laser-highlight {
+  color: #FFF;
+  text-shadow: 
+    0 0 20px rgba(255, 127, 0, 0.8),
+    0 0 40px rgba(255, 127, 0, 0.6),
+    0 0 60px rgba(255, 127, 0, 0.4),
+    0 0 80px rgba(255, 127, 0, 0.2);
+  filter: brightness(1.5) contrast(1.2);
+}
+
+.laser-beam {
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    rgba(255, 127, 0, 0.2) 20%,
+    rgba(255, 127, 0, 0.8) 50%,
+    rgba(255, 127, 0, 0.2) 80%,
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 20px rgba(255, 127, 0, 0.4),
+    0 0 40px rgba(255, 127, 0, 0.2);
+  height: 200%;
+  width: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .text-outline {
+    -webkit-text-stroke: 0.5px #FF7F00;
+  }
+
+  .card-neumorph {
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.4),
+                -6px -6px 12px rgba(255,255,255,0.03);
+  }
+
+  .btn-neumorph {
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.4),
+                -3px -3px 6px rgba(255,255,255,0.03);
+  }
+}
